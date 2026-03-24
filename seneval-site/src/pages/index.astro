@@ -1,11 +1,391 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Accueil">
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="relative bg-sen-blue overflow-hidden">
+    <!-- Fond décoratif -->
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sen-green"
+      >
+      </div>
+      <div class="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-white">
+      </div>
+    </div>
+
+    <div
+      class="relative max-w-6xl mx-auto px-6 py-28 md:py-36 flex flex-col md:flex-row items-center gap-16"
+    >
+      <div class="flex-1 text-center md:text-left">
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full mb-8 uppercase tracking-widest"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"
+            ><path
+              fill-rule="evenodd"
+              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path></svg
+          >
+          Agréé HAS &amp; COFRAC
+        </div>
+
+        <h1
+          class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+        >
+          Votre partenaire pour l'évaluation des ESSMS
+        </h1>
+        <p class="text-lg text-blue-200 mb-10 max-w-xl">
+          SEN'EVAL est un cabinet agréé HAS et COFRAC, spécialisé dans
+          l'évaluation des établissements et services sociaux et médico-sociaux.
+        </p>
+        <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+          <a
+            href="/evaluation"
+            class="bg-sen-green text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg"
+          >
+            Découvrir l'évaluation
+          </a>
+          <a
+            href="/contact"
+            class="bg-white/15 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/25 transition-colors"
+          >
+            Nous contacter
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte flottante -->
+      <div class="flex-1 flex justify-center w-full max-w-sm md:max-w-none">
+        <div class="bg-white rounded-3xl p-8 shadow-2xl w-full max-w-sm">
+          <img
+            src="/logo.jpg"
+            alt="SEN'EVAL"
+            class="h-16 w-auto mb-6 mx-auto"
+          />
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="bg-sen-light rounded-2xl p-4">
+              <p class="text-2xl font-bold text-sen-blue">HAS</p>
+              <p class="text-xs text-gray-500 mt-1">Autorisé</p>
+            </div>
+            <div class="bg-sen-light rounded-2xl p-4">
+              <p class="text-2xl font-bold text-sen-green">COFRAC</p>
+              <p class="text-xs text-gray-500 mt-1">Accrédité</p>
+            </div>
+            <div class="bg-sen-light rounded-2xl p-4 col-span-2">
+              <p class="text-3xl font-bold text-sen-blue">5 ans</p>
+              <p class="text-xs text-gray-500 mt-1">Rythme réglementaire</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ POURQUOI SEN'EVAL ════════════════════════════ -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
+        >
+          Nos atouts
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-4">
+          Pourquoi choisir SEN'EVAL ?
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Un cabinet de confiance au service de la qualité des établissements
+          médico-sociaux
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div
+          class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-sen-blue hover:shadow-lg transition-all duration-300"
+        >
+          <div
+            class="w-14 h-14 bg-sen-light rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sen-blue transition-colors"
+          >
+            <svg
+              class="w-7 h-7 text-sen-blue group-hover:text-white transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue mb-2 text-lg">Expertise</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Une autorisation HAS et une accréditation COFRAC attestant notre
+            conformité aux exigences réglementaires.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-sen-blue hover:shadow-lg transition-all duration-300"
+        >
+          <div
+            class="w-14 h-14 bg-sen-light rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sen-blue transition-colors"
+          >
+            <svg
+              class="w-7 h-7 text-sen-blue group-hover:text-white transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue mb-2 text-lg">Expérience</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Une équipe de direction et d'évaluateurs disposant d'une expérience
+            confirmée dans le champ médico-social.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-sen-blue hover:shadow-lg transition-all duration-300"
+        >
+          <div
+            class="w-14 h-14 bg-sen-light rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sen-blue transition-colors"
+          >
+            <svg
+              class="w-7 h-7 text-sen-blue group-hover:text-white transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue mb-2 text-lg">Accompagnement</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Une approche sur-mesure dans l'organisation de l'évaluation
+            permettant de s'ajuster à vos besoins spécifiques.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-sen-blue hover:shadow-lg transition-all duration-300"
+        >
+          <div
+            class="w-14 h-14 bg-sen-light rounded-2xl flex items-center justify-center mb-5 group-hover:bg-sen-blue transition-colors"
+          >
+            <svg
+              class="w-7 h-7 text-sen-blue group-hover:text-white transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue mb-2 text-lg">Lisibilité</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Une méthodologie garantissant une photographie complète des
+            pratiques et une identification claire des axes d'amélioration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ NOS VALEURS ═══════════════════════════════ -->
+  <section class="bg-sen-light py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
+        >
+          Ce qui nous guide
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-4">
+          Nos valeurs
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto">
+          Des principes qui guident chacune de nos interventions
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-14 h-14 bg-sen-blue rounded-2xl flex items-center justify-center mx-auto mb-5"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue text-lg mb-2">Indépendance</h3>
+          <p class="text-sm text-gray-500">
+            Nous agissons sans conflit d'intérêt, en toute autonomie.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-14 h-14 bg-sen-blue rounded-2xl flex items-center justify-center mx-auto mb-5"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue text-lg mb-2">Impartialité</h3>
+          <p class="text-sm text-gray-500">
+            Une appréciation objective de la qualité des prestations.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-14 h-14 bg-sen-blue rounded-2xl flex items-center justify-center mx-auto mb-5"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue text-lg mb-2">Rigueur</h3>
+          <p class="text-sm text-gray-500">
+            Une méthodologie structurée, conforme aux exigences HAS.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-14 h-14 bg-sen-blue rounded-2xl flex items-center justify-center mx-auto mb-5"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-sen-blue text-lg mb-2">Bienveillance</h3>
+          <p class="text-sm text-gray-500">
+            Une démarche centrée sur la personne, humaine et constructive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ CTA ═══════════════════════════════════ -->
+  <section class="relative bg-sen-blue py-24 px-6 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute top-0 right-0 w-80 h-80 rounded-full bg-sen-green transform translate-x-1/2 -translate-y-1/2"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white transform -translate-x-1/2 translate-y-1/2"
+      >
+      </div>
+    </div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <p
+        class="text-sen-green font-bold uppercase tracking-widest text-sm mb-4"
+      >
+        Passez à l'action
+      </p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        Prêt à planifier votre évaluation ?
+      </h2>
+      <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto">
+        Contactez-nous pour obtenir un devis personnalisé adapté à votre
+        établissement.
+      </p>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a
+          href="/contact"
+          class="bg-sen-green text-white px-10 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
+        >
+          Demander un devis
+        </a>
+        <a
+          href="/evaluation"
+          class="bg-white/15 border border-white/30 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/25 transition-colors"
+        >
+          En savoir plus
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

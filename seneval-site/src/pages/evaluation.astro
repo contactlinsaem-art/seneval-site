@@ -1,0 +1,543 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Évaluation">
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="relative bg-sen-blue overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sen-green"
+      >
+      </div>
+      <div class="absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-white">
+      </div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6 py-28 md:py-36 text-center">
+      <div
+        class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full mb-8 uppercase tracking-widest"
+      >
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"
+          ><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path
+            fill-rule="evenodd"
+            d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+            clip-rule="evenodd"></path></svg
+        >
+        Référentiel HAS
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+        L'évaluation des ESSMS
+      </h1>
+      <p class="text-lg text-blue-200 max-w-3xl mx-auto mb-10">
+        En France, les Établissements et Services Sociaux et Médico-Sociaux
+        accompagnent les personnes âgées, les personnes en situation de
+        handicap, les enfants protégés et les personnes en difficultés
+        spécifiques.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-sen-green text-white px-10 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg"
+      >
+        Demander un devis
+      </a>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ CHIFFRES CLÉS — BANDEAU ═════════════════════ -->
+  <section class="bg-white border-b border-gray-100 py-12 px-6">
+    <div
+      class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+    >
+      <div>
+        <p class="text-4xl md:text-5xl font-bold text-sen-green">3</p>
+        <p class="text-sm text-gray-500 mt-2 font-medium">Chapitres</p>
+      </div>
+      <div>
+        <p class="text-4xl md:text-5xl font-bold text-sen-green">9</p>
+        <p class="text-sm text-gray-500 mt-2 font-medium">Thématiques</p>
+      </div>
+      <div>
+        <p class="text-4xl md:text-5xl font-bold text-sen-green">42</p>
+        <p class="text-sm text-gray-500 mt-2 font-medium">Objectifs</p>
+      </div>
+      <div>
+        <p class="text-4xl md:text-5xl font-bold text-sen-blue">157</p>
+        <p class="text-sm text-gray-500 mt-2 font-medium">Critères</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ POURQUOI ════════════════════════ -->
+  <section class="py-24 px-6 bg-white">
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+    >
+      <div>
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-4"
+        >
+          Cadre réglementaire
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-6">
+          L'évaluation : pourquoi ?
+        </h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Conformément à la Loi 2002-2, tous les ESSMS ont l'obligation de
+          procéder à une évaluation régulière de leurs activités et de la
+          qualité des prestations qu'ils délivrent.
+        </p>
+        <p class="text-gray-600 mb-8 font-medium">
+          Elle a 3 principaux objectifs :
+        </p>
+        <div class="space-y-5">
+          <div class="flex gap-5 items-start">
+            <div
+              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >
+              1
+            </div>
+            <p class="text-gray-600 pt-1 leading-relaxed">
+              Le recueil de l'expression des personnes accompagnées et leurs
+              proches.
+            </p>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div
+              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >
+              2
+            </div>
+            <p class="text-gray-600 pt-1 leading-relaxed">
+              L'analyse des pratiques professionnelles conformément aux
+              recommandations.
+            </p>
+          </div>
+          <div class="flex gap-5 items-start">
+            <div
+              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >
+              3
+            </div>
+            <p class="text-gray-600 pt-1 leading-relaxed">
+              L'analyse des organisations mises en place par la gouvernance au
+              regard des bonnes pratiques.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Encart référentiel -->
+      <div class="bg-sen-light rounded-3xl p-10">
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-2"
+        >
+          Référentiel HAS
+        </p>
+        <h3 class="font-bold text-sen-blue text-2xl mb-8">
+          Structure du référentiel
+        </h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
+            <p class="text-4xl font-bold text-sen-green mb-1">3</p>
+            <p class="text-sm text-gray-500">Chapitres</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
+            <p class="text-4xl font-bold text-sen-green mb-1">9</p>
+            <p class="text-sm text-gray-500">Thématiques</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
+            <p class="text-4xl font-bold text-sen-green mb-1">42</p>
+            <p class="text-sm text-gray-500">Objectifs</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
+            <p class="text-4xl font-bold text-sen-blue mb-1">157</p>
+            <p class="text-sm text-gray-500">Critères</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ QUI EST CONCERNÉ ════════════════════ -->
+  <section class="bg-sen-light py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
+        >
+          Périmètre
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-6">
+          Qui est concerné ?
+        </h2>
+      </div>
+      <div
+        class="bg-white rounded-3xl p-10 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            L'ensemble des ESSMS mentionnés à l'article L.312-1 du CASF, sauf
+            dérogations prévues par le code d'action sociale et des familles.
+          </p>
+          <div class="flex items-center gap-4 bg-sen-light rounded-2xl p-5">
+            <div
+              class="w-14 h-14 bg-sen-blue rounded-2xl flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-7 h-7 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sen-blue text-lg">Tous les 5 ans</p>
+              <p class="text-sm text-gray-500">
+                Décret n° 2022-695 du 26 avril 2022
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {
+            [
+              "EHPAD / EHPA",
+              "FAM / MAS",
+              "IME / ITEP",
+              "SAVS / SAMSAH",
+              "CHRS / CHU",
+              "CAMSP / CMPP",
+            ].map((type) => (
+              <div class="bg-sen-light rounded-xl px-4 py-3 text-sm font-medium text-sen-blue text-center">
+                {type}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ DÉROULÉ — TIMELINE ═════════════════════ -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <p
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
+        >
+          Méthodologie
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-sen-blue">
+          Déroulé de l'évaluation
+        </h2>
+      </div>
+
+      <div class="relative">
+        <!-- Ligne verticale -->
+        <div
+          class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-sen-blue via-sen-green to-sen-green md:-translate-x-px"
+        >
+        </div>
+
+        <div class="space-y-10">
+          {
+            [
+              {
+                n: 1,
+                titre: "Réunion de cadrage",
+                desc: "Présentation de la démarche, définition du périmètre et planification de l'évaluation avec l'équipe dirigeante.",
+                color: "bg-sen-blue",
+              },
+              {
+                n: 2,
+                titre: "Analyse documentaire",
+                desc: "Examen des documents institutionnels, projets d'établissement, procédures et indicateurs qualité.",
+                color: "bg-sen-blue",
+              },
+              {
+                n: 3,
+                titre: "Évaluation sur site",
+                desc: "Visite de l'établissement, entretiens avec les professionnels, les personnes accompagnées et leurs proches.",
+                color: "bg-sen-blue",
+              },
+              {
+                n: 4,
+                titre: "Rédaction du pré-rapport",
+                desc: "Synthèse des observations et premières conclusions soumises à l'établissement pour échanges contradictoires.",
+                color: "bg-sen-blue",
+              },
+              {
+                n: 5,
+                titre: "Rapport définitif",
+                desc: "Remise du rapport final avec les axes d'amélioration identifiés et les points forts de l'établissement.",
+                color: "bg-sen-green",
+              },
+            ].map((step) => (
+              <div class="flex gap-6 md:gap-10 items-start relative">
+                <div
+                  class={`w-12 h-12 ${step.color} text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10 shadow-md text-lg`}
+                >
+                  {step.n}
+                </div>
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1 hover:shadow-md hover:border-sen-blue transition-all">
+                  <h3 class="font-bold text-sen-blue text-lg mb-2">
+                    {step.titre}
+                  </h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ CTA ════════════════════════════════ -->
+  <section class="relative bg-sen-blue py-24 px-6 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute top-0 right-0 w-80 h-80 rounded-full bg-sen-green transform translate-x-1/2 -translate-y-1/2"
+      >
+      </div>
+    </div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Prêt à démarrer votre évaluation ?
+      </h2>
+      <p class="text-blue-200 mb-10 text-lg">
+        Contactez-nous pour un devis personnalisé adapté à votre structure.
+      </p>
+      <a
+        href="/contact"
+        class="bg-white text-sen-blue px-10 py-4 rounded-full font-semibold hover:bg-sen-light transition-colors shadow-lg"
+      >
+        Nous contacter
+      </a>
+    </div>
+  </section>
+</Layout>
+<div class="max-w-4xl mx-auto text-center">
+  <h1 class="text-4xl font-bold text-sen-blue mb-6">L'évaluation des ESSMS</h1>
+  <p class="text-lg text-gray-600">
+    En France, les Établissements et Services Sociaux et Médico-Sociaux
+    accompagnent les personnes âgées, les personnes en situation de handicap,
+    les enfants protégés et les personnes en difficultés spécifiques.
+  </p>
+</div>
+
+<!-- POURQUOI -->
+<section class="py-20 px-6">
+  <div
+    class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+  >
+    <div>
+      <h2 class="text-3xl font-bold text-sen-blue mb-6">
+        L'évaluation : pourquoi ?
+      </h2>
+      <p class="text-gray-600 mb-6">
+        Conformément à la Loi 2002-2, tous les ESSMS ont l'obligation de
+        procéder à une évaluation régulière de leurs activités et de la qualité
+        des prestations qu'ils délivrent.
+      </p>
+      <p class="text-gray-600 mb-8">Elle a 3 principaux objectifs :</p>
+      <div class="space-y-4">
+        <div class="flex gap-4 items-start">
+          <span
+            class="w-8 h-8 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >1</span
+          >
+          <p class="text-gray-600">
+            Le recueil de l'expression des personnes accompagnées et leurs
+            proches.
+          </p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span
+            class="w-8 h-8 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >2</span
+          >
+          <p class="text-gray-600">
+            L'analyse des pratiques professionnelles conformément aux
+            recommandations.
+          </p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span
+            class="w-8 h-8 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >3</span
+          >
+          <p class="text-gray-600">
+            L'analyse des organisations mises en place par la gouvernance au
+            regard des bonnes pratiques.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-sen-light rounded-2xl p-8">
+      <h3 class="font-bold text-sen-blue mb-6 text-xl">Le référentiel HAS</h3>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+          <p class="text-3xl font-bold text-sen-green">3</p>
+          <p class="text-sm text-gray-500 mt-1">Chapitres</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+          <p class="text-3xl font-bold text-sen-green">9</p>
+          <p class="text-sm text-gray-500 mt-1">Thématiques</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+          <p class="text-3xl font-bold text-sen-green">42</p>
+          <p class="text-sm text-gray-500 mt-1">Objectifs</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm col-span-3">
+          <p class="text-3xl font-bold text-sen-green">157</p>
+          <p class="text-sm text-gray-500 mt-1">Critères</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUI EST CONCERNÉ -->
+<section class="bg-sen-light py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-sen-blue mb-6">Qui est concerné ?</h2>
+    <p class="text-gray-600 mb-4">
+      L'ensemble des ESSMS mentionnés à l'article L.312-1 du CASF, sauf
+      dérogations prévues par le code d'action sociale et des familles.
+    </p>
+    <p class="text-gray-600 mb-8">
+      Le décret n° 2022-695 du 26 avril 2022 fixe à <strong
+        class="text-sen-blue">tous les 5 ans</strong
+      > le rythme des évaluations.
+    </p>
+  </div>
+</section>
+
+<!-- DÉROULÉ -->
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-sen-blue text-center mb-14">
+      Déroulé de l'évaluation
+    </h2>
+    <div class="relative">
+      <div
+        class="absolute left-6 top-0 bottom-0 w-0.5 bg-sen-green hidden md:block"
+      >
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div
+            class="w-12 h-12 bg-sen-blue text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10"
+          >
+            1
+          </div>
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1"
+          >
+            <h3 class="font-bold text-sen-blue mb-2">Réunion de cadrage</h3>
+            <p class="text-sm text-gray-600">
+              Présentation de la démarche, définition du périmètre et
+              planification de l'évaluation avec l'équipe dirigeante.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div
+            class="w-12 h-12 bg-sen-blue text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10"
+          >
+            2
+          </div>
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1"
+          >
+            <h3 class="font-bold text-sen-blue mb-2">Analyse documentaire</h3>
+            <p class="text-sm text-gray-600">
+              Examen des documents institutionnels, projets d'établissement,
+              procédures et indicateurs qualité.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div
+            class="w-12 h-12 bg-sen-blue text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10"
+          >
+            3
+          </div>
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1"
+          >
+            <h3 class="font-bold text-sen-blue mb-2">Évaluation sur site</h3>
+            <p class="text-sm text-gray-600">
+              Visite de l'établissement, entretiens avec les professionnels, les
+              personnes accompagnées et leurs proches.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div
+            class="w-12 h-12 bg-sen-blue text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10"
+          >
+            4
+          </div>
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1"
+          >
+            <h3 class="font-bold text-sen-blue mb-2">
+              Rédaction du pré-rapport
+            </h3>
+            <p class="text-sm text-gray-600">
+              Synthèse des observations et premières conclusions soumises à
+              l'établissement pour échanges contradictoires.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div
+            class="w-12 h-12 bg-sen-green text-white rounded-full flex items-center justify-center font-bold shrink-0 z-10"
+          >
+            5
+          </div>
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex-1"
+          >
+            <h3 class="font-bold text-sen-blue mb-2">Rapport définitif</h3>
+            <p class="text-sm text-gray-600">
+              Remise du rapport final avec les axes d'amélioration identifiés et
+              les points forts de l'établissement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-sen-blue py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">
+      Prêt à démarrer votre évaluation ?
+    </h2>
+    <p class="text-blue-200 mb-8">Contactez-nous pour un devis personnalisé.</p>
+    <a
+      href="/contact"
+      class="bg-white text-sen-blue px-10 py-4 rounded-full font-medium hover:bg-sen-light transition-colors"
+    >
+      Nous contacter
+    </a>
+  </div>
+</section>
