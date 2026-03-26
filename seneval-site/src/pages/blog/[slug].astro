@@ -1,0 +1,305 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("blog");
+  return articles.map((article) => ({
+    params: { slug: article.id.replace(/\.md$/, "") },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const articles = await getCollection("blog");
+const article = articles.find((a) => a.id.replace(/\.md$/, "") === slug);
+
+if (!article) {
+  return Astro.redirect("/blog");
+}
+
+const { Content } = await render(article);
+
+const autresArticles = articles
+  .filter((a) => a.id !== article.id)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  )
+  .slice(0, 3);
+---
+
+<Layout title={article.data.titre}>
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="relative bg-sen-blue overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sen-green"
+      >
+      </div>
+      <div class="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-white">
+      </div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32">
+      <!-- Retour -->
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors text-sm mb-8"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+        </svg>
+        Retour au blog
+      </a>
+
+      <!-- Catégorie -->
+      {
+        article.data.categorie && (
+          <span class="inline-block text-xs font-semibold text-white bg-white/15 px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+            {article.data.categorie}
+          </span>
+        )
+      }
+
+      <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+        {article.data.titre}
+      </h1>
+
+      {
+        article.data.description && (
+          <p class="text-lg text-blue-200 mb-8 max-w-3xl">
+            {article.data.description}
+          </p>
+        )
+      }
+
+      <!-- Méta -->
+      <div class="flex flex-wrap items-center gap-6 text-sm text-blue-200">
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center"
+          >
+            <svg
+              class="w-4 h-4 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <span>{article.data.auteur}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+            ></path>
+          </svg>
+          <span>
+            {
+              new Date(article.data.date).toLocaleDateString("fr-FR", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })
+            }
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ IMAGE ══════════════════════════════════════════ -->
+  {
+    article.data.image && (
+      <section class="bg-white">
+        <div class="max-w-4xl mx-auto px-6 -mt-8">
+          <div class="rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src={article.data.image}
+              alt={article.data.titre}
+              class="w-full h-auto object-cover max-h-[480px]"
+            />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ═══════════════════════════════════ CONTENU ════════════════════════════════════════ -->
+  <section class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <article
+        class="prose prose-lg prose-gray max-w-none
+        prose-headings:text-sen-blue prose-headings:font-bold
+        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-gray-600 prose-p:leading-relaxed
+        prose-a:text-sen-green prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-sen-blue
+        prose-ul:text-gray-600 prose-ol:text-gray-600
+        prose-li:marker:text-sen-green
+        prose-blockquote:border-sen-green prose-blockquote:bg-sen-light prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-blockquote:px-6
+        prose-img:rounded-2xl prose-img:shadow-lg
+        prose-hr:border-gray-200"
+      >
+        <Content />
+      </article>
+
+      <!-- Partage / Retour -->
+      <div
+        class="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sen-blue hover:text-sen-green transition-colors font-medium"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+          </svg>
+          Retour au blog
+        </a>
+        <div class="flex items-center gap-2 text-sm text-gray-400">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+            ></path>
+          </svg>
+          Partager cet article
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ARTICLES LIÉS ═════════════════════════════════════ -->
+  {
+    autresArticles.length > 0 && (
+      <section class="bg-sen-light py-20">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-sen-blue mb-10 text-center">
+            Autres articles
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {autresArticles.map((a) => (
+              <a
+                href={`/blog/${a.id.replace(/\.md$/, "")}`}
+                class="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              >
+                {a.data.image ? (
+                  <div class="aspect-[16/10] overflow-hidden bg-sen-light">
+                    <img
+                      src={a.data.image}
+                      alt={a.data.titre}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : (
+                  <div class="aspect-[16/10] bg-linear-to-br from-sen-blue to-sen-blue/80 flex items-center justify-center">
+                    <svg
+                      class="w-12 h-12 text-white/30"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+                      />
+                    </svg>
+                  </div>
+                )}
+                <div class="p-5 flex flex-col flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    {a.data.categorie && (
+                      <span class="text-xs font-semibold text-sen-green bg-green-50 px-2.5 py-0.5 rounded-full">
+                        {a.data.categorie}
+                      </span>
+                    )}
+                    <span class="text-xs text-gray-400">
+                      {new Date(a.data.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-sen-blue group-hover:text-sen-green transition-colors line-clamp-2">
+                    {a.data.titre}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ═══════════════════════════════════════ CTA ════════════════════════════════════════ -->
+  <section class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-4">
+        Besoin d'un accompagnement ?
+      </h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+        Contactez notre équipe pour discuter de votre projet d'évaluation.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 bg-sen-green text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg"
+      >
+        Nous contacter
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
