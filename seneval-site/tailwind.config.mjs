@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sen-blue':  '#1a3a7a',  // bleu marine logo
+        'sen-blue':  '#1a78c2',  // bleu vif, infime touche cyan
         'sen-green': '#4ab848',  // vert logo
         'sen-light': '#f4f8ff',  // fond clair
       },

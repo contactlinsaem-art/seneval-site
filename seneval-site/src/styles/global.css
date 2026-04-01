@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-sen-blue:  #1a3a7a;
+  --color-sen-blue:  #1a78c2;
   --color-sen-green: #4ab848;
   --color-sen-light: #f4f8ff;
   --font-family-sans: 'Inter', system-ui, sans-serif;
