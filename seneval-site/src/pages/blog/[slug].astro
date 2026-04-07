@@ -165,6 +165,70 @@ const autresArticles = articles
         <Content />
       </article>
 
+      <!-- PDF à télécharger -->
+      {
+        article.data.fichier_pdf && (
+          <div class="mt-10 bg-sen-light border border-sen-blue/20 rounded-2xl p-6">
+            <h3 class="font-bold text-sen-blue mb-4 flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Document à télécharger
+            </h3>
+            <div class="flex gap-3 flex-wrap">
+              <a
+                href={article.data.fichier_pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-sen-blue text-white px-6 py-3 rounded-full hover:bg-sen-green transition-colors font-medium text-sm"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                Consulter le PDF
+              </a>
+              <a
+                href={article.data.fichier_pdf}
+                download
+                class="inline-flex items-center gap-2 border-2 border-sen-blue text-sen-blue px-6 py-3 rounded-full hover:bg-sen-blue hover:text-white transition-colors font-medium text-sm"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Télécharger
+              </a>
+            </div>
+          </div>
+        )
+      }
+
       <!-- Partage / Retour -->
       <div
         class="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4"

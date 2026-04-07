@@ -43,116 +43,94 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- ═════════════════════ CHIFFRES CLÉS — BANDEAU ═════════════════════ -->
-  <section class="bg-white border-b border-gray-100 py-12 px-6">
-    <div
-      class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-    >
-      <div>
-        <p class="text-4xl md:text-5xl font-bold text-sen-green">3</p>
-        <p class="text-sm text-gray-500 mt-2 font-medium">Chapitres</p>
-      </div>
-      <div>
-        <p class="text-4xl md:text-5xl font-bold text-sen-green">9</p>
-        <p class="text-sm text-gray-500 mt-2 font-medium">Thématiques</p>
-      </div>
-      <div>
-        <p class="text-4xl md:text-5xl font-bold text-sen-green">42</p>
-        <p class="text-sm text-gray-500 mt-2 font-medium">Objectifs</p>
-      </div>
-      <div>
-        <p class="text-4xl md:text-5xl font-bold text-sen-blue">157</p>
-        <p class="text-sm text-gray-500 mt-2 font-medium">Critères</p>
+  <!-- ═════════════════════ RÉFÉRENTIEL HAS ═════════════════════ -->
+  <section class="bg-sen-light py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p
+        class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
+      >
+        Référentiel HAS
+      </p>
+      <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-12">
+        Structure du référentiel
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+          <p class="text-4xl md:text-5xl font-bold text-sen-green mb-1">3</p>
+          <p class="text-sm text-gray-500 font-medium">Chapitres</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+          <p class="text-4xl md:text-5xl font-bold text-sen-green mb-1">9</p>
+          <p class="text-sm text-gray-500 font-medium">Thématiques</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+          <p class="text-4xl md:text-5xl font-bold text-sen-green mb-1">42</p>
+          <p class="text-sm text-gray-500 font-medium">Objectifs</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+          <p class="text-4xl md:text-5xl font-bold text-sen-blue mb-1">157</p>
+          <p class="text-sm text-gray-500 font-medium">Critères</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════ POURQUOI ════════════════════════ -->
   <section class="py-24 px-6 bg-white">
-    <div
-      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
-    >
-      <div>
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
         <p
-          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-4"
+          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-3"
         >
           Cadre réglementaire
         </p>
         <h2 class="text-3xl md:text-4xl font-bold text-sen-blue mb-6">
-          L'évaluation : pourquoi ?
+          L'évaluation : pour quel objectif ?
         </h2>
-        <p class="text-gray-600 mb-6 leading-relaxed">
+        <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
           Conformément à la Loi 2002-2, tous les ESSMS ont l'obligation de
           procéder à une évaluation régulière de leurs activités et de la
           qualité des prestations qu'ils délivrent.
         </p>
-        <p class="text-gray-600 mb-8 font-medium">
-          Elle a 3 principaux objectifs :
-        </p>
-        <div class="space-y-5">
-          <div class="flex gap-5 items-start">
-            <div
-              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-            >
-              1
-            </div>
-            <p class="text-gray-600 pt-1 leading-relaxed">
-              Le recueil de l'expression des personnes accompagnées et leurs
-              proches.
-            </p>
-          </div>
-          <div class="flex gap-5 items-start">
-            <div
-              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-            >
-              2
-            </div>
-            <p class="text-gray-600 pt-1 leading-relaxed">
-              L'analyse des pratiques professionnelles conformément aux
-              recommandations.
-            </p>
-          </div>
-          <div class="flex gap-5 items-start">
-            <div
-              class="w-9 h-9 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-            >
-              3
-            </div>
-            <p class="text-gray-600 pt-1 leading-relaxed">
-              L'analyse des organisations mises en place par la gouvernance au
-              regard des bonnes pratiques.
-            </p>
-          </div>
-        </div>
       </div>
 
-      <!-- Encart référentiel -->
-      <div class="bg-sen-light rounded-3xl p-10">
-        <p
-          class="text-sen-green text-sm font-bold uppercase tracking-widest mb-2"
-        >
-          Référentiel HAS
-        </p>
-        <h3 class="font-bold text-sen-blue text-2xl mb-8">
-          Structure du référentiel
-        </h3>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
-            <p class="text-4xl font-bold text-sen-green mb-1">3</p>
-            <p class="text-sm text-gray-500">Chapitres</p>
+      <p class="text-gray-600 mb-8 font-medium text-center">
+        Elle a 3 principaux objectifs :
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-sen-light rounded-2xl p-6 text-center">
+          <div
+            class="w-10 h-10 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4"
+          >
+            1
           </div>
-          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
-            <p class="text-4xl font-bold text-sen-green mb-1">9</p>
-            <p class="text-sm text-gray-500">Thématiques</p>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Le recueil de l'expression des personnes accompagnées et leurs
+            proches.
+          </p>
+        </div>
+        <div class="bg-sen-light rounded-2xl p-6 text-center">
+          <div
+            class="w-10 h-10 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4"
+          >
+            2
           </div>
-          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
-            <p class="text-4xl font-bold text-sen-green mb-1">42</p>
-            <p class="text-sm text-gray-500">Objectifs</p>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            L'analyse des pratiques professionnelles conformément aux
+            recommandations.
+          </p>
+        </div>
+        <div class="bg-sen-light rounded-2xl p-6 text-center">
+          <div
+            class="w-10 h-10 bg-sen-blue text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4"
+          >
+            3
           </div>
-          <div class="bg-white rounded-2xl p-5 text-center shadow-sm">
-            <p class="text-4xl font-bold text-sen-blue mb-1">157</p>
-            <p class="text-sm text-gray-500">Critères</p>
-          </div>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            L'analyse des organisations mises en place par la gouvernance au
+            regard des bonnes pratiques.
+          </p>
         </div>
       </div>
     </div>
@@ -270,7 +248,7 @@ import Layout from "../layouts/Layout.astro";
               {
                 n: 4,
                 titre: "Rédaction du pré-rapport",
-                desc: "Synthèse des observations et premières conclusions soumises à l'établissement pour échanges contradictoires.",
+                desc: "Synthèse des observations et premières conclusions soumises à l'établissement pour des échanges contradictoires.",
                 color: "bg-sen-blue",
               },
               {

@@ -10,6 +10,7 @@ const blog = defineCollection({
     description: z.string().optional(),
     image: z.string().optional(),
     categorie: z.string().optional(),
+    fichier_pdf: z.string().optional(),
   }),
 });
 

@@ -81,6 +81,11 @@ export default defineConfig({
             ],
           },
           {
+            type: "image",
+            name: "fichier_pdf",
+            label: "Fichier PDF à télécharger (optionnel)",
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Contenu",
